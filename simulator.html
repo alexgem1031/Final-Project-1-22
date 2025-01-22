@@ -36,53 +36,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abacus</title>
     <style>
         body {
+            text-align: center;
             font-family: Arial, sans-serif;
         }
-        .navbar, .content {
-            text-align: left;
-        }
-        .abacus-container {
+
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            margin: 20px 0;
+        }
+
+        .rod {
+            display: flex;
+            background: black;
+            height: 10px;
+            margin: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+
+        .bead {
+            width: 20px;
+            height: 20px;
+            background: #dda15e;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 5px;
+            transition: transform 0.2s;
+        }
+
+        .instructions {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            max-width: 400px;
         }
     </style>
 </head>
 <body>
 
-    <div class="abacus-container">
-        <h2>Simple Abacus Simulator</h2>
-        <div class="abacus">
-            <div>
-                <label>Rod 1: <input type="number" min="0" max="10" oninput="update(this, 'beads1')"></label>
-                <span id="beads1"></span>
-            </div>
-            <div>
-                <label>Rod 2: <input type="number" min="0" max="10" oninput="update(this, 'beads2')"></label>
-                <span id="beads2"></span>
-            </div>
-            <div>
-                <label>Rod 3: <input type="number" min="0" max="10" oninput="update(this, 'beads3')"></label>
-                <span id="beads3"></span>
-            </div>
-            <div>
-                <label>Rod 4: <input type="number" min="0" max="10" oninput="update(this, 'beads4')"></label>
-                <span id="beads4"></span>
-            </div>
-            <div>
-                <label>Rod 5: <input type="number" min="0" max="10" oninput="update(this, 'beads5')"></label>
-                <span id="beads5"></span>
-            </div>
+    <h2>Simple Abacus Simulator</h2>
+
+    <div class="container">
+        <div class="rod">
+            <div class="bead" onclick="moveBead(this)"></div>
+            <div class="bead" onclick="moveBead(this)"></div>
+            <div class="bead" onclick="moveBead(this)"></div>
+            <div class="bead" onclick="moveBead(this)"></div>
+            <div class="bead" onclick="moveBead(this)"></div>
         </div>
+        <br> 
+        <p>
+            Each bead above represents a unit. Moving a bead to the right increases the count, <br> while moving it back to the left decreases it. 
+            Click on a bead to move it to the right, and click again to return it to the left.
+        </p>
     </div>
+
     <script>
-        function update(input, id) {
-            document.getElementById(id).innerText = "O".repeat(Math.min(10, Math.max(0, input.value)));
+        function moveBead(bead) {
+            bead.style.transform = bead.style.transform ? "" : "translateX(100px)";
         }
     </script>
 
