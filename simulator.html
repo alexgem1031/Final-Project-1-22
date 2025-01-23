@@ -23,82 +23,16 @@
             <a class="nav-link" href="about.html" style="color: #0d1b2a">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" a href="https://www.genieacademy.com/abacus-simulator" style="color: #0d1b2a">Simulator</a>
+            <a class="nav-link" a href="simulator.html" style="color: #0d1b2a">Simulator</a>
           </li>
         </ul>
       </div>
     </div>
-    </nav>  
-</html>
+    </nav>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
+    <body style="background-color: #dda15e;">
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      
+    </body>
 
-        .rod {
-            display: flex;
-            background: black;
-            height: 10px;
-            margin: 10px;
-            padding: 5px;
-            width: 200px;
-        }
-
-        .bead {
-            width: 20px;
-            height: 20px;
-            background: #dda15e;
-            border-radius: 50%;
-            position: relative;
-            margin: 0 5px;
-            transition: transform 0.2s;
-        }
-
-        .instructions {
-            margin-top: 10px;
-            font-size: 16px;
-            color: #333;
-            max-width: 400px;
-        }
-    </style>
-</head>
-<body>
-
-    <h2>Simple Abacus Simulator</h2>
-
-    <div class="container">
-        <div class="rod">
-            <div class="bead" onclick="moveBead(this)"></div>
-            <div class="bead" onclick="moveBead(this)"></div>
-            <div class="bead" onclick="moveBead(this)"></div>
-            <div class="bead" onclick="moveBead(this)"></div>
-            <div class="bead" onclick="moveBead(this)"></div>
-        </div>
-        <br> 
-        <p>
-            Each bead above represents a unit. Moving a bead to the right increases the count, <br> while moving it back to the left decreases it. 
-            Click on a bead to move it to the right, and click again to return it to the left.
-        </p>
-    </div>
-
-    <script>
-        function moveBead(bead) {
-            bead.style.transform = bead.style.transform ? "" : "translateX(100px)";
-        }
-    </script>
-
-</body>
 </html>
