@@ -32,7 +32,26 @@
 
     <body style="background-color: #dda15e;">
 
+          <script src="script.js" defer></script> 
+          <style>
+              .abacus-container {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin: 50px auto; 
+                  width: fit-content;
+              }
+          </style>
+          <div class="abacus-container">
+              <h2>Simple Abacus Simulator</h2>
+              
+              <label>Rod 1: <input type="number" id="rod1" value="0" min="0"></label>
+              <label>Rod 2: <input type="number" id="rod2" value="0" min="0"></label>
+              
+              <button onclick="updateAbacus()">Calculate Total</button>
+              
+              <h3>Total: <span id="total">0</span></h3>
+          </div>
+      </body>
+      </html>
       
-    </body>
-
-</html>
